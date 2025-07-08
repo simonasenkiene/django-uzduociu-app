@@ -1,0 +1,9 @@
+<h1>{% if form.instance.pk %}Redaguoti užduotį{% else %}Nauja užduotis{% endif %}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Išsaugoti</button>
+</form>
+
+<a href="{% url 'task_list' %}">Grįžti į sąrašą</a>
